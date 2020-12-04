@@ -72,13 +72,13 @@ function runLichen(buf, onExit, ...)
 end
 
 function launchLichen(buf)
-    if(buf:FileType()=='lichen'{
+    if(buf:FileType()=='lichen'){
         runLichen(buf)
     }
 end
 
 function evaluateBlock(buf)
-    if(buf:FileType()=='lichen'{
+    if(buf:FileType()=='lichen'){
         if(!job){
             runLichen(buf)
         }
