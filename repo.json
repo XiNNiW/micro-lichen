@@ -1,7 +1,7 @@
 [{
     "Name": "lichen",
     "Description": "Lichen frontend for music and dsp livecoding",
-    "Tags": ["livecoding", "music", "algorave"],
+    "Tags": ["lichen","livecoding", "music", "algorave"],
     "Website": "https://github.com/XiNNiW/micro-lichen.git",
     "Versions": [
       {
