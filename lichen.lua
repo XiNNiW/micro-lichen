@@ -66,6 +66,7 @@ function launchLichen(bp, args)
 end
 
 function evaluateBlock(bp,args)
+    buffer.Save()
 	buffer.Log("lichen: launching lichen!")
 	local buf = bp.Buf
 
@@ -75,8 +76,15 @@ function evaluateBlock(bp,args)
         end
 
         if(job ~=  nil) then
-        	shell.JobSend(job, "l".. buf.AbsPath .."\n")
-        	-- job.Stdin:Close()
+            local lines = buf.LineArray
+            shell.JobSend(job, "l")
+
+            for idx = 0, buf.LineArray.LinesNum(), 1 
+            do 
+                shell.JobSend(job, buf.Line(idx))
+                
+            end
+        	job.Stdin:Close()
         end
         
     end
